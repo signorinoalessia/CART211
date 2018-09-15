@@ -1,3 +1,17 @@
 @charset "UTF-8";
 /* CSS Document */ 
 
+
+h2{
+   	color: black;
+	font-family: Avenir;
+	font-weight: Light;
+	font-size: 34px;
+	padding-bottom: 12px;
+}
+p: {
+	text-align: center;
+	font-family: Avenir;
+	font-style: Light;
+	
+}

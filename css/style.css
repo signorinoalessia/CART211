@@ -2,10 +2,16 @@
 /* CSS Document */
 /* References used: we3schools.com */
 
+/* 
 body {
 	background-color: #f1ebe1;
 }
-
+ */
+body {
+    height: 800px;
+    background-color: #f1ebe1; /* For browsers that do not support gradients */
+    background-image: linear-gradient(to bottom right, #f1ebe1, #F1D6C5); /* Standard syntax (must be last) */
+}
 h1
 {
 	color: black;
@@ -28,6 +34,12 @@ p {
 	font-style: Light;
 	font-size: 12px;
 }
+p.about {
+    max-width: 42em; 
+    border: 3px solid #e9e0d0;
+    padding: 14px 25px;
+    word-wrap: break-word;
+}
 p2 {
 	font-family: Avenir;
 	font-style: Light;
@@ -43,7 +55,7 @@ a:link {
 
 /* visited link */
 a:visited {
-    color: #E5B6ED;
+    color: #C5BEED;
 }
 
 /* mouse over link */

@@ -1,6 +1,9 @@
 @charset "UTF-8";
 /* CSS Document */ 
 
+body {
+	background-color: #f1ebe1;
+}
 
 h2{
    	color: black;

@@ -5,16 +5,39 @@ body {
 	background-color: #f1ebe1;
 }
 
+h1{
+   	color: black;
+	font-family: Avenir;
+	font-weight: Light;
+	font-size: 38px;
+	padding-bottom: 12px;
+}
 h2{
    	color: black;
 	font-family: Avenir;
 	font-weight: Light;
-	font-size: 34px;
+	font-size: 28px;
 	padding-bottom: 12px;
 }
-p: {
-	text-align: center;
+
+p {
+	font-family: Merriweather;
+	font-style: Light;
+	font-size: 12px;
+}
+p2 {
 	font-family: Avenir;
 	font-style: Light;
-	
+	font-size: 14px;
+}
+alt {
+	color: #6C6C6C;
+	font-family: Merriweather;
+	font-style: Light;
+	font-size: 8px;
+}
+footer {
+	font-family: Merriweather;
+	font-style: Light;
+	font-size: 8px;
 }

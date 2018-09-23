@@ -8,7 +8,7 @@ body {
 }
  */
 body {
-    height: 800px;
+    height: 1600px;
     background-color: #f1ebe1; /* For browsers that do not support gradients */
     background-image: linear-gradient(to bottom right, #f1ebe1, #F1D6C5); /* Standard syntax (must be last) */
 }
@@ -35,7 +35,13 @@ p {
 	font-size: 12px;
 }
 p.about {
-    max-width: 42em; 
+    max-width: 44em; 
+    border: 3px solid #e9e0d0;
+    padding: 14px 25px;
+    word-wrap: break-word;
+}
+p.reading {
+    max-width: 76em; 
     border: 3px solid #e9e0d0;
     padding: 14px 25px;
     word-wrap: break-word;

@@ -11,6 +11,12 @@ body {
     height: 1600px;
     background-color: #f1ebe1; /* For browsers that do not support gradients */
     background-image: linear-gradient(to bottom right, #f1ebe1, #F1D6C5); /* Standard syntax (must be last) */
+    
+	margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 100px;
+    margin-left: 50px;
+
 }
 h1
 {

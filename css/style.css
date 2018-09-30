@@ -1,29 +1,39 @@
 @charset "UTF-8";
-/* CSS Document */
+/* CSS Document for Alessia's cart 211 website*/
 /* References used: we3schools.com */
 
-/* 
-body {
-	background-color: #f1ebe1;
-}
- */
 body {
     height: 1600px;
     background-color: #f1ebe1; /* For browsers that do not support gradients */
     background-image: linear-gradient(to bottom right, #f1ebe1, #F1D6C5); /* Standard syntax (must be last) */
-    
 	margin-top: 50px;
     margin-bottom: 50px;
     margin-right: 100px;
     margin-left: 50px;
-
+}
+img {
+    max-width: 30%;
+    height: auto;
+  	padding: 10px;
+  	position: absolute;
+    left: 500px;
+    top: 320px;
+    z-index: -1;
+}
+.container {
+    position: relative;
+    color: white;
+}
+.left {
+    position: absolute;
+    left: 16px;
 }
 h1
 {
 	color: black;
-	font-family: Avenir;
-	font-weight: Light;
-	font-size: 38px;
+	font-family: "Helvetica Neue", Avenir, Helvetica, Arial, "sans-serif";
+	font-weight: bold, heavy;
+	font-size: 48px;
 	padding-bottom: 12px;
 	width: 40;
 }

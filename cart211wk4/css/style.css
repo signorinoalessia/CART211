@@ -1,0 +1,85 @@
+@charset "UTF-8";
+/* === CSS RESET === 
+We want to control margin and padding */
+
+* { 
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: azure;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+}
+
+nav, header, article {
+	margin-bottom: 20px;
+/*	border: solid 1px blue;*/
+}
+
+/* === NAV INFO HERE === */
+nav {
+	background-color: deepskyblue;
+	position: fixed;
+	width: 100%;
+} 
+/*INHERITANCE OF "a" TAG, UP TRICKLES DOWN*/
+a:link {
+	display: inline-block;
+	background-color: deepskyblue;
+	color: mintcream;
+	text-decoration: none;
+	padding: 10px 15px;
+	font-size: 18px;
+	text-transform: capitalize;
+}
+a:visited {
+	color: cornsilk;
+}
+a:hover {
+	background-color:azure;
+	color: dimgrey;
+}
+
+/* === HEADER INFO HERE === */
+header {
+	padding: 54px 20px 0; /*trbl*/
+}
+
+header h1 {
+	font-size: 48px;
+	text-transform: uppercase;
+}
+header h2 {
+	font-family: Georgia, "serif";
+	font-style: italic;
+	color: #666;
+	text-transform: capitalize;
+}
+
+/* === ARTICLE INFO HERE ===*/
+article {
+	padding: 0 20px;
+}
+article h1 {
+	font-size: 28px;
+	text-transform: capitalize;
+}
+article p {
+	font-size: 15px;
+	margin-bottom: 20px; /*stick to a gutter, same amt, same place*/
+	line-height: 20px;
+	text-align: justify;
+}
+
+/* === FOOTER INFO HERE === */
+footer {
+	padding: 0 20px;
+	font-style: italic;
+	font-family: Georgia, "serif";
+	font-size: 12px;
+}
+
+
+

@@ -46,8 +46,8 @@ h2{
 }
 
 p {
-	font-family: Merriweather;
-	font-style: Light;
+	font-family: Merriweather, Georgia, "serif";
+	font-style: Light, Regular;
 	font-size: 12px;
 }
 p.about {

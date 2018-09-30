@@ -1,0 +1,32 @@
+@charset "UTF-8";
+/* CSS Document */
+
+section {
+	background-color:#333;
+	width:100px;
+	height:100px;
+	margin:20px;
+/*	display: inline-block;*/
+}
+
+.rel {
+	background-color:tomato;
+	position:relative;
+	left:150px;
+/*	top:50px;*/
+	z-index: 0;
+}
+
+#parent {
+	background-color:beige;
+	width:50%;
+	position:relative;
+}
+
+#abso {
+	background-color:crimson;
+	position:absolute;
+	right:-50px;
+	bottom:-50px;
+	margin:0;
+}

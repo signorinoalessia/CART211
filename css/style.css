@@ -2,10 +2,28 @@
 /* CSS Document for Alessia's cart 211 website*/
 /* References used: we3schools.com */
 
+* {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+#s1 {
+/*	jump out of css folder, go into root folder (dot-dot) */
+/*	position determines whats always visible, ex c@c */
+	background:url(../images/goldensky.jpg) no-repeat center center fixed;
+	background-size:cover;
+	width:100%;
+	height:70%;
+/*	you need the PARENT TO BE RELATIVE*/
+	position: relative;
+}
+
 body {
-    height: 1600px;
+    height: 100%;
     background-color: #f1ebe1; /* For browsers that do not support gradients */
-    background-image: linear-gradient(to bottom right, #f1ebe1, #F1D6C5); /* Standard syntax (must be last) */
+    background-image: linear-gradient(to bottom right, #f1ebe1, #F1D6C5); 
+	/* Standard syntax (must be last) */
 	margin-top: 50px;
     margin-bottom: 50px;
     margin-right: 100px;
@@ -20,13 +38,9 @@ img {
     top: 320px;
     z-index: -1;
 }
-.container {
-    position: relative;
-    color: white;
-}
-.left {
-    position: absolute;
-    left: 16px;
+
+nav, header, article {
+	margin-bottom: 30px;
 }
 h1
 {

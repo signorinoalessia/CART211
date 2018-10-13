@@ -13,6 +13,13 @@ html,body {
 	height:100%;
 }
 
+p {
+	font-family: Georgia, "serif";
+	font-size: 13px;
+	text-align: justify;
+	line-height: 1.4;
+}
+
 #s1 {
 /*	jump out of css folder, go into root folder (dot-dot) */
 /*	position determines whats always visible, ex c@c */
@@ -25,12 +32,43 @@ html,body {
 }
 
 #s1 hgroup {
-	width:400px;
+	width:320px;
 	background-color: #fff;
 	padding: 20px;
+	font-family: Roboto,Helvetica,Avenir,Arial,"non-serif";
 /*	POSITIION IS ABSOLUTE, BUT INSIDE PARENT*/
 	position: absolute;
 	bottom: 20px;
 	right:20px;
 }
 
+#s2 {
+	background:#FCEAEC;
+	padding: 20px;
+}
+#s2 h1 {
+	color: #4E2768;
+	font-family: Roboto,Helvetica,Avenir,Arial,"non-serif";
+}
+#s3 {
+	background:url(../images/bg2.jpg) no-repeat center center fixed;
+	background-size:cover;
+	width:100%;
+	height:50%;
+/*	you need the PARENT TO BE RELATIVE*/
+	position: relative;
+}
+#s3 hgroup {
+	color: #F97810;
+	padding: 20px;
+	font-family: Roboto,Helvetica,Avenir,Arial,"non-serif";
+}
+#s3 figure {
+	width:320px;
+	padding: 20px;
+
+/*	POSITIION IS ABSOLUTE, BUT INSIDE PARENT*/
+	position: absolute;
+	bottom: 20px;
+	right:20px;
+}

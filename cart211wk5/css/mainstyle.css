@@ -1,5 +1,6 @@
 /* === CSS RESET === */
 /* Linked to review position website */
+/* Reference: W3schools */
 
 /* padding and border will not increase the width/height */
 * {
@@ -7,19 +8,30 @@
 	padding:0;
 	box-sizing:border-box;
 }
-
 /*Do this to support height values in %*/
 html,body {
 	height:100%;
 }
-
+/* floats */
+.column {
+	float:left;
+	width: 33.33%;
+	padding:5px;
+}
+.row::after{
+	content:"";
+	clear:both;
+	display:table;
+}
+img {
+  width:100%
+}
 p {
 	font-family: Georgia, "serif";
 	font-size: 13px;
 	text-align: justify;
 	line-height: 1.4;
 }
-
 #s1 {
 /*	jump out of css folder, go into root folder (dot-dot) */
 /*	position determines whats always visible, ex c@c */
@@ -30,7 +42,6 @@ p {
 /*	you need the PARENT TO BE RELATIVE*/
 	position: relative;
 }
-
 #s1 hgroup {
 	width:320px;
 	background-color: #fff;
@@ -41,13 +52,12 @@ p {
 	bottom: 20px;
 	right:20px;
 }
-
 #s2 {
 	background:#FCEAEC;
 	padding: 20px;
 }
 #s2 h1 {
-	color: #4E2768;
+	color: #963334;
 	font-family: Roboto,Helvetica,Avenir,Arial,"non-serif";
 }
 #s3 {
@@ -59,16 +69,7 @@ p {
 	position: relative;
 }
 #s3 hgroup {
-	color: #F97810;
+	color: #D97134;
 	padding: 20px;
 	font-family: Roboto,Helvetica,Avenir,Arial,"non-serif";
-}
-#s3 figure {
-	width:320px;
-	padding: 20px;
-
-/*	POSITIION IS ABSOLUTE, BUT INSIDE PARENT*/
-	position: absolute;
-	bottom: 20px;
-	right:20px;
 }

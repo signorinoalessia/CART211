@@ -1,0 +1,109 @@
+/* CSS RESET */
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,700,900');
+
+* {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+/*parent elements have height of 100% so child will be able to*/
+html,body {
+	height:100%;
+}
+
+#s1 {
+	width:100%;
+	height:80%;
+	background:url(../images/bg.jpg) no-repeat fixed center center;
+	background-size:cover;
+}
+
+#s1 hgroup {
+	background:white;
+	padding:20px;
+	width:40%;
+	position:absolute;
+	top:40px;
+	right:40px;
+	min-width:420px;
+}
+
+#s1 h2 {
+	font-family:'Roboto', sans-serif;
+	font-weight:100;
+	font-size:2vmin;
+  line-height:26px;
+}
+
+#s1 h1 {
+	font-family:'Roboto', sans-serif;
+	font-weight:900;
+/*	font-size:72px; use instead something that will scale up&down*/
+	font-size:5.7vmax;
+	line-height:62px;
+	text-transform:uppercase;
+}
+h1 {
+  font-family:'Roboto', sans-serif;
+  font-weight:700;
+  padding-bottom: 30px;
+}
+
+#s2 {
+/*	2 columns of information*/
+/*	instead of specifying fixed height (height:30%) */
+	/* background:#264573; */
+  background:url(../images/bg2.jpg) no-repeat fixed center center;
+	background-size:cover;
+	min-height:100%;
+	height:auto;
+	padding:60px;
+}
+
+#s2 article {
+	/* column-count:2;
+  column-gap: 26px; */
+}
+
+#s2 h1 {
+  color: #e4cdcd;
+}
+
+#s2 p {
+   font-family:'Roboto', sans-serif;
+ 	 font-weight:300;
+   font-size:1.4vmax;
+   color: #e4cdcd;
+   line-height: 1.6;
+   text-align: justify;
+   text-justify: inter-word;
+}
+
+#s3 {
+	width:100%;
+	height:90%;
+	background:url(../images/bg2.jpg) no-repeat fixed center center;
+	background-size:cover;
+	position:relative;
+/*	you need this so the parent demands that other child elements stay inside the parent container*/
+}
+
+#s3 article {
+	background:#e4cdcd;
+  opacity: 0.5;
+	padding:60px;
+	width:91%;
+  min-width:900px;
+	position:absolute;
+	top:20px;
+	left:60px;
+  font-size:1.1vmax;
+}
+
+#s3 p {
+   font-family:'Roboto', sans-serif;
+ 	 font-weight:300;
+   color: black;
+   line-height: 1.2;
+}

@@ -164,7 +164,7 @@ p + p {
 #s5 {
 	background:url(../images/bg3.jpg) no-repeat fixed center center;
 	background-size:cover;
-	min-height:90%;
+			min-height:90%;
 	height:auto;
 	padding-top:40px;
 	padding-left:5%;

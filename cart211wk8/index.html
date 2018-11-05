@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Video Example</title>
+<!--	link-->
+	<link rel="stylesheet" href="css/video.css">
+</head>
+
+<body>
+<!--	what type of video are you using? make source separate btw-->
+<!--	controls, one word (gives play button and timeline!-->
+<!--	<video controls>-->
+	<video autoplay muted loop poster="images/Sub.jpg" id="myVid">
+		<source src="video/Sub.mp4" type="video/mp4">
+	</video>
+	
+<!--	article.content-->
+<!--	section#first-->
+	<section id="first">
+		<article class="content">
+			<h1>Heading</h1>
+			<p>Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat phaedrum te duo, eum cu recteque expetendis neglegentur. Cu mentitum maiestatis persequeris pro, pri ponderum tractatos ei. Id qui nemore latine molestiae, ad mutat oblique delicatissimi pro.
+			Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat phaedrum te duo, eum cu recteque expetendis neglegentur. Cu mentitum maiestatis persequeris pro, pri ponderum tractatos ei. Id qui nemore latine molestiae, ad mutat oblique delicatissimi pro.</p>
+<!--			javascript, a button is introduced! open and close button tag -->
+<!--			event handler, ways of controlling events, such as click -->
+			<button id="myBtn" onclick="myFunction()">Pause</button>
+		</article>
+	</section>
+	
+	<section id="second">
+		Alma Dei Creatoris
+	</section>
+	
+	<script>
+		//init the vars
+		let video = document.getElementById("myVid");
+		let btn = document.getElementById("myBtn");
+		
+// Not enough, because you need conditionals!
+//		function myFunction() {
+//			video.pause();
+//		}
+		
+		function myFunction(){
+			if(video.paused){
+				 video.play();
+    			 btn.innerHTML = "Pause"; //innerHTML accesses the html to *change* the actual text!
+			} else {
+    			video.pause();
+    			btn.innerHTML = "Play";
+  			}
+		}
+	</script>
+	
+</body>
+</html>

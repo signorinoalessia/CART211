@@ -1,0 +1,85 @@
+* {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+html,body{
+	height:100%;
+}
+
+/*position of fixed, static, if I want it to move up as I scroll, put absolute instead*/
+/*right and bottom pos, ensure that if I were to resize, stays visible*/
+/*translate x and y this much % if you wanna center it*/
+/*MINIMUM width and height, the smallest that is it*/
+
+/*
+#myVid {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+}*/
+
+/*use transform:translate to get the video center (if most important part is there)*/
+/*or just use flexbox*/
+#myVid {
+/*	display:none;*/
+	position:fixed;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	min-width:100%;
+	min-height:100%;
+	z-index:-1;
+}
+
+/*whether fixed or absolute, text needs to be placed*/
+.content {
+    position: absolute;
+    bottom: 0;
+/*	opacity:.5;*/
+/*	avoid opacity because else EVERYTHING will go sheer*/
+	background: rgba(0,0,75,.50);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 40px;
+/*	put it on z axis, to put on top of everything*/
+	z-index: 99;
+/*	transition:all .3s;*/
+}
+.content:hover {
+	background:rgba(0,0,75,1);
+	transition:all .6s;
+}
+
+#first {
+	width:100%;
+	height:100%;
+}
+#second {
+	background:#302854;
+	width:100%;
+	height:100%;
+}
+
+/*wider, more padding, wider, pointer hand appears when hovering*/
+/*maybe you want to roll over, takes a bit of time to change, you need a transition*/
+/*what properties? ALL potentially, how long*/
+#myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+	
+	transition:all .3s;
+}
+/*a link, a visited, a hover,a active... these are pseudo-classes!*/
+#myBtn:hover {
+    background: #ddd;
+    color: black;
+}

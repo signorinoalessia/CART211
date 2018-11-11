@@ -1,9 +1,10 @@
 console.clear();
 holder = document.getElementById('js-holder');
+console.log("hello, inside js file");
 
-holder.addEventListener('onresize',function(){
+window.addEventListener('resize',function(){
   holder.style.background = 'rgb('+random(0,255)+','+random(0,255)+','+random(0,255)+')';
-  console.log("Hello I'm inside the js file");
+  console.log("hi again, inside event listener");
 });
 
 var random = function(min,max){

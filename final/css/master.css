@@ -1,0 +1,15 @@
+.holder{
+  padding:20px 0;
+  width:75%;
+  margin:0 auto;
+  font-family:monospace;
+}
+
+p,h1{
+  max-width:600px;
+  margin:20px auto;
+}
+
+p{
+  line-height:22px;
+}

@@ -1,8 +1,13 @@
+// Ref for jQuery: https://stackoverflow.com/questions/32568635/how-do-i-change-div-text-using-array-values-with-javascript
+
 window.onload = function(){
   console.clear();
-  holder = document.getElementById('js-holder');
+  let holder = document.getElementById('js-holder');
+  var canvas = document.getElementById('canvas');
+  let ctx = canvas.getContext('2d');
+  ctx.globalCompositeOperation = 'multiply';
 
-  //array of messages to be displayed in #2
+  //array of messages to be displayed in #3
   let messages = [
     "0 Hello is anyone there?",
     "1 Hacking, cloning and copying are key elements of net art.",
@@ -10,8 +15,21 @@ window.onload = function(){
     "2 I am a vessel of identity, can you guess my race and gender?",
     "3 I don't need a physical body anymore.",
     "4 Packets of memories inside of other vessels suffice to convey who I am.",
-    "5 Nothing is anonymous really."
+    "5 Nothing is anonymous really.",
+    "I changed my mind, let me out!!!!",
+    "Anonymity is a promised pillar of network communities, for the better or the worse.",
+    "00010000100010010111010101010101001001000011100011100010111",
+    "A/S/L? A/S/L? A/S/L?"
   ];
+
+  // array of images for changing bg in #2
+  let bgImages = new Array();
+  let bgImages[0] = new Image();
+  bgImages[0].src = 'images/bg1';
+  let bgImages[1] = new Image();
+  bgImages[1].src = 'images/bg2';
+  let bgImages[2] = new Image();
+  bgImages[2].src = 'images/bg3';
 
   // random for colors (and eventually images/videos)
   let random = function(min,max){
@@ -22,33 +40,38 @@ window.onload = function(){
 
 // RESIZE EVENT LISTENER
   window.addEventListener('resize',function(){
-    // #1 change color of background
-    holder.style.background = 'rgba('+random(0,255)+','+random(0,255)+','+random(0,255)+','+random(0.8,1)+')';
+    // #1 change color of background -- HOW TO MAKE FULL SCREEN? ASK SANTO*
+    //wrapper.style.backgroundImage = " url(images/bg1.jpg)";
+    holder.style.backgroundColor = 'rgba('+random(0,255)+','+random(0,255)+','+random(0,255)+','+random(0.8,1)+')';
 
-    // #2 cycle through array and modify text with jQuery
-    (function($) {
-      $(function() {
-          counter =  messages.length - 1,
-          previousText = $("#p1"),
-          msgLength =  messages.length - 1;
 
-        function display_skills() {
-          if (counter === msgLength) {
-              counter = 0;
-          }
-          else {
-              counter++;
-          }
-          previousText.html(messages[counter]);
-        }
+    // #2 change background (images/videos)
 
-        display_skills();
 
-        setInterval(function() {
-          display_skills();
-        }, 3000);
-      });
-    })(jQuery);
+    // #3 cycle through array and modify text with jQuery -- GLITCHING, ASK SANTO*
+    // (function($) {
+    //   $(function() {
+    //       counter =  messages.length - 1,
+    //       previousText = $("#p1"),
+    //       msgLength =  messages.length - 1;
+    //
+    //     function display_skills() {
+    //       if (counter === msgLength) {
+    //           counter = 0;
+    //       }
+    //       else {
+    //           counter++;
+    //       }
+    //       previousText.html(messages[counter]);
+    //     }
+    //
+    //     display_skills();
+    //
+    //     setInterval(function() {
+    //       display_skills();
+    //     }, 4000);
+    //   });
+    // })(jQuery);
 
 /* TRY WITH INNER HTML */
     // for (let i=0;i<messages.length;i++) {

@@ -45,6 +45,7 @@ window.onload = function(){
 
     // #2 change background (images/videos)
     canvas.style.background = bgImages[random(0,2)];
+    document.getElementById('bng').src = 'images/bg2.jpg';
     //holder.style.backgroundImage = "url(images/bg1.jpg)";
 
 

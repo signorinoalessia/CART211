@@ -54,6 +54,26 @@
 	<div id="anim">
 	</div>
 
+	<article id="display_me">
+		<h1>Javascript</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta nobis suscipit consectetur. Vitae velit est quaerat culpa optio consectetur, temporibus maxime atque eum. Provident sed, eius? Illum dolorum at, dolore.</p>
+		<span id="close" onclick = "hideFunction()">X</span>
+		<!-- ^^ onclick is the eventHandler  -->
+	</article>
+	<button id="trigger" onclick = "showFunction()">Show me something</button>
+
+<!--button javascript  -->
+	<script>
+		function showFunction(){
+			document.getElementById("display_me").style.opacity = 1;
+		}
+
+		function hideFunction(){
+			document.getElementById("display_me").style.opacity = 0;
+		}
+	</script>
+
+<!-- video javascript -->
 	<script>
 		//init the vars
 		var video = document.getElementById("myVid");
@@ -69,7 +89,7 @@
     			btn.innerHTML = "Play";
   			}
 		}
-		
+
 	</script>
 
 

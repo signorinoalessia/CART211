@@ -37,6 +37,18 @@ html, body {
 	background: rgba(0,0,0,1);
 }
 
+.content h1 {
+	font-family: Gotham,"Helvetica Neue",Helvetica,Arial,"sans-serif";
+	font-size:72px;
+	position:relative;
+	animation: fadeIn 1s;
+}
+/* @keyframes rule, animations w3schools */
+@keyframes fadeIn {
+	from {opacity:0;left:100px;}
+	to{opacity:1;left:0px;}
+}
+
 #first {
 	width:100%;
 	height: 100%;
@@ -186,8 +198,31 @@ nav a:hover{
 	color:rgba(0,0,0,1);
 }
 
+/* ====== ANIMATION TRIGGERED BY TRANSITION ===== */
+#anim {
+	width:100px;
+	height:100px;
+	border-radius:20%;
+	background:tomato;
+	position:absolute;
+	top:100px;
+	right:100px;
+}
+#anim:hover{
+	animation: rotateThis 2s infinite linear;
+	/*infinite: make it play on loop
+	linear, remove default easing! */
+}
+@keyframes rotateThis {
+	0%{transform:rotate(0deg);background:tomato}
+	25%{background:orange;}
+	50%{background:cadetblue;}
+	75%{background:limegreen;}
+	100%{transform:rotate(360deg);background:tomato}
+}
 
 
+/* This code taken from hover.css goes into nav items  */
 /* Bounce To Right */
 .hvr-bounce-to-right {
   display: inline-block;
@@ -209,7 +244,7 @@ nav a:hover{
   left: 0;
   right: 0;
   bottom: 0;
-  background: crimson;
+  background: tomato;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transform-origin: 0 50%;

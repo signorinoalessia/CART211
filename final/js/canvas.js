@@ -1,4 +1,5 @@
 // Ref for jQuery: https://stackoverflow.com/questions/32568635/how-do-i-change-div-text-using-array-values-with-javascript
+// pixelate ref: https://codepen.io/lawrencealan/pen/nJgqA
 
 window.onload = function(){
   console.clear();
@@ -49,30 +50,30 @@ window.onload = function(){
     //holder.style.backgroundImage = "url(images/bg1.jpg)";
 
 
-    // #3 cycle through array and modify text with jQuery -- GLITCHING, ASK SANTO*
-    // (function($) {
-    //   $(function() {
-    //       counter =  messages.length - 1,
-    //       previousText = $("#p1"),
-    //       msgLength =  messages.length - 1;
-    //
-    //     function display_skills() {
-    //       if (counter === msgLength) {
-    //           counter = 0;
-    //       }
-    //       else {
-    //           counter++;
-    //       }
-    //       previousText.html(messages[counter]);
-    //     }
-    //
-    //     display_skills();
-    //
-    //     setInterval(function() {
-    //       display_skills();
-    //     }, 4000);
-    //   });
-    // })(jQuery);
+    //#3 cycle through array and modify text with jQuery -- GLITCHING, ASK SANTO*
+    (function($) {
+      $(function() {
+          counter =  messages.length - 1,
+          previousText = $("#p1"),
+          msgLength =  messages.length - 1;
+
+        function display_skills() {
+          if (counter === msgLength) {
+              counter = 0;
+          }
+          else {
+              counter++;
+          }
+          previousText.html(messages[counter]);
+        }
+
+        display_skills();
+
+        setInterval(function() {
+          display_skills();
+        }, 4000);
+      });
+    })(jQuery);
 
 /* TRY WITH INNER HTML */
     // for (let i=0;i<messages.length;i++) {

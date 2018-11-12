@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>video example</title>
+	<link rel="stylesheet" href="css/video.css">
+</head>
+
+<body>
+	<video autoplay loop muted poster="images/tea.jpg" id="myVid">
+		<source src="video/tea.mp4" type="video/mp4">
+	</video>
+	
+	<section id="first">
+		<article class="content">
+			<h1>Heading</h1>
+			<p>Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat phaedrum te duo, eum cu recteque expetendis neglegentur. Cu mentitum maiestatis persequeris pro, pri ponderum tractatos ei. Id qui nemore latine molestiae, ad mutat oblique delicatissimi pro.
+			Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat phaedrum te duo, eum cu recteque expetendis neglegentur.</p>
+			<button id="myBtn" onclick="myFunction()">Pause</button>
+		</article>
+	</section>
+	
+	
+	<section id="second">
+	</section>
+	
+	
+	<script>
+		//init the vars
+		var video = document.getElementById("myVid");
+		var btn = document.getElementById("myBtn");
+		
+		function myFunction(){
+			
+			if(video.paused){
+				 video.play();
+    			 btn.innerHTML = "Pause";
+			} else {
+    			video.pause();
+    			btn.innerHTML = "Play";
+  			}
+			
+		}
+	</script>
+	
+	
+</body>
+</html>

@@ -1,0 +1,232 @@
+* {
+	margin:0;
+	padding: 0;
+	box-sizing:border-box;
+}
+
+html, body {
+	height: 100%;
+}
+
+#myVid {
+    position: fixed;
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+/*
+    right: 0;
+    bottom: 0;
+*/
+    min-width: 100%;
+    min-height: 100%;
+	z-index: -1;
+}
+
+.content {
+    position: absolute;
+    bottom: 0;
+    color: #f1f1f1;
+    width: 100%;
+    padding: 40px;
+	z-index: 99;
+	background: rgba(0,0,0,.5);
+	transition:all .3s;
+}
+
+.content:hover {
+	background: rgba(0,0,0,1);
+}
+
+#first {
+	width:100%;
+	height: 100%;
+}
+
+#myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+	transition:all 1s;
+}
+
+#myBtn:hover {
+    background: #ddd;
+    color: black;
+}
+
+/* ====== TRANSITION EXAMPLE ======  */
+
+/* http://ianlunn.github.io/Hover/ */
+/* https://zurb.com/playground/css-boxshadow-experiments?utm_source=dlvr.it&utm_medium=feed */
+
+#second {
+	background: tomato;
+	width:100%;
+	min-height: 100%;
+	height:auto;
+	/* the smallest your gonna be is gonna be 100% in your height,
+	BUT if you need to be higher, your actual height is set to auto */
+	display:flex;
+	flex-flow:row wrap;
+	justify-content:space-around;
+	align-items:center;
+	/*wrap if you need them to/ justify-content space around,
+	give equal amount around child elements, align controls vertical el.s  */
+}
+
+figure {
+	overflow:hidden;
+	/*DONT SHOW CHILDREN WHEN OUTSIDE OF ELEMENT (figcaptions) */
+	position:relative;
+	/*^^^ THIS IS IMPORTANT (to keep children h1,figcaption with parent) */
+	/* background:#777; */
+	height:400px;
+	width:300px;
+	text-align:center;
+	box-shadow: 20px 20px 20px rgba(250,60,50,0.4);
+	/*x,y, feather amt,colour  */
+	border-radius:10%;
+	transition: all .3s;
+}
+
+figure:hover {
+	/* background:orange; */
+	box-shadow: 0px 0px 40px rgba(70,0,0,0.9);
+}
+
+#f1 {
+	background:url(../images/bg1.jpg) no-repeat center center;
+}
+#f1:hover{
+		background:url(../images/bg1.jpg) no-repeat center left;
+}
+
+#f2 {
+	background:url(../images/bg2.jpg) no-repeat center center;
+}
+#f2:hover{
+		background:url(../images/bg2.jpg) no-repeat center right;
+}
+
+#f3 {
+	background:url(../images/bg3.jpg) no-repeat center center;
+}
+#f3:hover{
+		background:url(../images/bg3.jpg) no-repeat center left;
+}
+
+#f4 {
+	background:url(../images/bg4.jpg) no-repeat center center;
+}
+#f4:hover{
+		background:url(../images/bg4.jpg) no-repeat center right;
+}
+
+/*FLEXBOX NO BUENO FOR TRANSITIONS AND ANIMATION USE RELATIVE POS INSTEAD  */
+figure h1 {
+	font-family:Gotham,"Helvetica Neue",Helvetica,Arial,"sans-serif";
+	font-size:48px;
+	color:#fff;
+	width:100%;
+	text-shadow:2px 2px 0px #666;
+	position:absolute;
+	top:20px;
+	/* opacity:0; */
+	transition: all .4s;
+}
+
+/* figure h1:hover { */
+/* ^^^ EW NO. */
+figure:hover h1 {
+	top:100px;
+}
+
+figure figcaption {
+	font-family:Georgia,"serif";
+	font-style:italic;
+	background:rgba(0,0,0,.6);
+	color:#fff;
+	padding:20px;
+	position:absolute;
+	bottom:-100px;
+	width:100%;
+	transition:all .4s .2s;
+}
+
+figure:hover figcaption {
+	bottom:0px;
+}
+
+/* ======= NAV TRANSITIONS EXAMPLE ======= */
+nav {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	background-color:rgba(0,0,0,.75);
+	display:flex;
+	flex-flow:row wrap;
+}
+
+nav a:link{
+	flex-grow:1;
+	padding:20px;
+	text-decoration:none;
+	color:#fff;
+	text-align:center;
+	transition:all .3s;
+}
+
+nav a:hover{
+	/* background:#fff; */
+	color:rgba(0,0,0,1);
+}
+
+
+
+/* Bounce To Right */
+.hvr-bounce-to-right {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+.hvr-bounce-to-right:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: crimson;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-bounce-to-right:hover, .hvr-bounce-to-right:focus, .hvr-bounce-to-right:active {
+  color: white;
+}
+.hvr-bounce-to-right:hover:before, .hvr-bounce-to-right:focus:before, .hvr-bounce-to-right:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}

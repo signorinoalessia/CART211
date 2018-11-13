@@ -42,12 +42,13 @@ window.onload = function(){
 // RESIZE EVENT LISTENER
   window.addEventListener('resize',function(){
     // #1 change color of background -- HOW TO MAKE FULL SCREEN? ASK SANTO*
-    holder.style.backgroundColor = 'rgba('+random(0,255)+','+random(0,255)+','+random(0,255)+','+random(0.8,1)+')';
+    holder.style.backgroundColor = 'rgba('+random(0,255)+','+random(0,255)+','+random(0,255)+','+0.6+')';
 
     // #2 change background (images/videos)
     canvas.style.background = bgImages[random(0,2)];
-    document.getElementById('bng').src = 'images/bg2.jpg';
-    //holder.style.backgroundImage = "url(images/bg1.jpg)";
+    //document.getElementById('bng').src = 'images/bg'+random(1,3)+'.jpg';
+    document.getElementById('bng').src = 'images/bg'+random(1,3)+'.jpg';
+    // canvas.style.backgroundImage = "url(images/bg1.jpg)";
 
 
     //#3 cycle through array and modify text with jQuery -- GLITCHING, ASK SANTO*
@@ -73,6 +74,7 @@ window.onload = function(){
           display_skills();
         }, 4000);
       });
+
     })(jQuery);
 
 /* TRY WITH INNER HTML */

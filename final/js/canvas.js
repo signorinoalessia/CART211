@@ -24,7 +24,7 @@ window.onload = function(){
   ];
 
   // array of images for changing bg in #2
-  var bgImages = new Array[];
+  var bgImages = new Array();
   bgImages[0] = new Image();
   bgImages[0].src = 'images/bg1.jpg';
   bgImages[1] = new Image();
@@ -37,7 +37,7 @@ window.onload = function(){
     let rand = min + Math.random()*(max+1-min);
     rand = rand^0;
     return rand;
-  };
+  }
 
 // RESIZE EVENT LISTENER
   window.addEventListener('resize',function(){

@@ -3,9 +3,9 @@
 
 window.onload = function(){
   console.clear();
-  let holder = document.getElementById('js-holder');
+  var holder = document.getElementById('js-holder');
   var canvas = document.getElementById('canvas');
-  let ctx = canvas.getContext('2d');
+  var ctx = canvas.getContext('2d');
   ctx.globalCompositeOperation = 'multiply';
 
   //array of messages to be displayed in #3
@@ -24,14 +24,34 @@ window.onload = function(){
   ];
 
   // array of images for changing bg in #2
-  var bgImages = new Array[];
+//  var bgImages = new Array();
+//  bgImages[0] = new Image();
+//  bgImages[0].src = 'images/bg1.jpg';
+//  bgImages[1] = new Image();
+//  bgImages[1].src = 'images/bg2.jpg';
+//  bgImages[2] = new Image();
+//  bgImages[2].src = 'images/bg3.jpg';
+
+  var bgVideos = new Array();
   bgImages[0] = new Image();
   bgImages[0].src = 'images/bg1.jpg';
   bgImages[1] = new Image();
   bgImages[1].src = 'images/bg2.jpg';
   bgImages[2] = new Image();
   bgImages[2].src = 'images/bg3.jpg';
-
+	
+	// for loop 5 videos
+//for (let i=0;i<videoLength;i++) {
+//	
+//}
+	
+	//parent needs to be relative (container)
+	// so position recenters
+	
+	// floating effects of body parts
+	// floating objects in js, velocity.js
+	// jquery ui drag and drop
+	
   // random for colors (and eventually images/videos)
   let random = function(min,max){
     let rand = min + Math.random()*(max+1-min);
@@ -43,6 +63,8 @@ window.onload = function(){
   window.addEventListener('resize',function(){
     // #1 change color of background -- HOW TO MAKE FULL SCREEN? ASK SANTO*
     holder.style.backgroundColor = 'rgba('+random(0,255)+','+random(0,255)+','+random(0,255)+','+0.6+')';
+	  console.log(holder.style.backgroundColor);
+	  
 
     // #2 change background (images/videos)
     canvas.style.background = bgImages[random(0,2)];
@@ -51,8 +73,10 @@ window.onload = function(){
 
 
     //#3 cycle through array and modify text with jQuery -- GLITCHING, ASK SANTO*
-    window.onload = function() {
+   // window.onload = function() {
+	(function($) {
       $(function() {
+		  
           counter =  messages.length - 1,
           previousText = $("#p1"),
           msgLength =  messages.length - 1;
@@ -95,4 +119,4 @@ window.onload = function(){
 
   }); //end eventListener
 
-} // end onLoad
+}; // end onLoad

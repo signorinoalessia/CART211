@@ -20,7 +20,8 @@ html,body{
   height:100%;
   margin:0 auto;
   font-family:monospace;
-	position:relative;
+  position:relative;
+/*  background-color:rgba(255,0,0,.5);*/
 }
 
 .holder img {

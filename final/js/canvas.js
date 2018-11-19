@@ -32,20 +32,21 @@ window.onload = function(){
 //  bgImages[2] = new Image();
 //  bgImages[2].src = 'images/bg3.jpg';
 
+// videos array
   var bgVideos = new Array();
-  bgImages[0] = new Image();
-  bgImages[0].src = 'images/bg1.jpg';
-  bgImages[1] = new Image();
-  bgImages[1].src = 'images/bg2.jpg';
-  bgImages[2] = new Image();
-  bgImages[2].src = 'images/bg3.jpg';
+  bgVideos[0] = new Video();
+  bgVideos[0].src = 'videos/bokeh.mp4';
+  bgVideos[1] = new Video();
+  bgVideos[1].src = 'videos/cables.mp4';
+  bgVideos[2] = new Video();
+  bgVideos[2].src = 'videos/clouds.mp4';
 	
 	// for loop 5 videos
 //for (let i=0;i<videoLength;i++) {
 //	
 //}
 	
-	//parent needs to be relative (container)
+	// for bouncing body parts, parent needs to be relative (container)
 	// so position recenters
 	
 	// floating effects of body parts
@@ -61,6 +62,7 @@ window.onload = function(){
 
 // RESIZE EVENT LISTENER
   window.addEventListener('resize',function(){
+//	  console.log("good version");
     // #1 change color of background -- HOW TO MAKE FULL SCREEN? ASK SANTO*
     holder.style.backgroundColor = 'rgba('+random(0,255)+','+random(0,255)+','+random(0,255)+','+0.6+')';
 	  console.log(holder.style.backgroundColor);

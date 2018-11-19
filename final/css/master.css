@@ -8,10 +8,8 @@ html,body{
 	height:100%;
 }
 
-#canvas{
-	position:absolute;
-	top:0;
-	left:0;
+.canvas{
+  
 }
 
 .holder{
@@ -20,15 +18,6 @@ html,body{
   height:100%;
   margin:0 auto;
   font-family:monospace;
-	/* background-image: url(../images/bg1.jpg); */
-	position:relative
-}
-
-.holder img {
-	position:absolute;
-	top:0;
-	left:0;
-	z-index:-1;
 }
 
 p,h1{

@@ -7,6 +7,9 @@ window.onload = function(){
   var canvas = document.getElementById('canvas');
   var ctx = canvas.getContext('2d');
   ctx.globalCompositeOperation = 'multiply';
+  var Video = document.getElementById('myVid');
+  var bgVideos;
+  var videoLength = 3;
 
   //array of messages to be displayed in #3
   let messages = [
@@ -24,35 +27,36 @@ window.onload = function(){
   ];
 
   // array of images for changing bg in #2
-//  var bgImages = new Array();
-//  bgImages[0] = new Image();
-//  bgImages[0].src = 'images/bg1.jpg';
-//  bgImages[1] = new Image();
-//  bgImages[1].src = 'images/bg2.jpg';
-//  bgImages[2] = new Image();
-//  bgImages[2].src = 'images/bg3.jpg';
+ /*var bgImages = new Array();
+ bgImages[0] = new Image();
+ bgImages[0].src = 'images/bg1.jpg';
+ bgImages[1] = new Image();
+ bgImages[1].src = 'images/bg2.jpg';
+ bgImages[2] = new Image();
+ bgImages[2].src = 'images/bg3.jpg';*/
 
 // videos array
-  var bgVideos = new Array();
-  bgVideos[0] = new Video();
-  bgVideos[0].src = 'videos/bokeh.mp4';
-  bgVideos[1] = new Video();
-  bgVideos[1].src = 'videos/cables.mp4';
-  bgVideos[2] = new Video();
-  bgVideos[2].src = 'videos/clouds.mp4';
-	
-	// for loop 5 videos
-//for (let i=0;i<videoLength;i++) {
-//	
-//}
-	
+  // var bgVideos = new Array();
+  // bgVideos[0] = new Video();
+  // bgVideos[0].src = 'videos/bg1.mp4';
+  // bgVideos[1] = new Video();
+  // bgVideos[1].src = 'videos/bg2.mp4';
+  // bgVideos[2] = new Video();
+  // bgVideos[2].src = 'videos/bg3.mp4';
+
+// loop 3 videos
+  for (let i=0;i<videoLength;i++) {
+    bgVideos[i] = new Video();
+    bgVideos[i].src = 'videos/bg'+[i+1]+'.mp4';
+  }
+
 	// for bouncing body parts, parent needs to be relative (container)
 	// so position recenters
-	
+
 	// floating effects of body parts
 	// floating objects in js, velocity.js
 	// jquery ui drag and drop
-	
+
   // random for colors (and eventually images/videos)
   let random = function(min,max){
     let rand = min + Math.random()*(max+1-min);
@@ -63,22 +67,25 @@ window.onload = function(){
 // RESIZE EVENT LISTENER
   window.addEventListener('resize',function(){
 //	  console.log("good version");
-    // #1 change color of background -- HOW TO MAKE FULL SCREEN? ASK SANTO*
-    holder.style.backgroundColor = 'rgba('+random(0,255)+','+random(0,255)+','+random(0,255)+','+0.6+')';
+    // #1 change color of background
+    holder.style.backgroundColor = 'rgba('+random(0,255)+','+random(0,255)+','+random(0,255)+','+0.8+')';
 	  console.log(holder.style.backgroundColor);
-	  
+
 
     // #2 change background (images/videos)
-    canvas.style.background = bgImages[random(0,2)];
-    document.getElementById('bng').src = 'images/bg'+random(1,3)+'.jpg';
-    //holder.style.backgroundImage = "url(images/bg1.jpg)";
+    /* canvas.style.background = bgImages[random(0,2)];
+    document.getElementById('bng').src = 'images/bg'+random(1,3)+'.jpg'; */
 
+    //holder.style.backgroundImage = "url(images/bg1.jpg)"; //to throw away
 
-    //#3 cycle through array and modify text with jQuery -- GLITCHING, ASK SANTO*
+    canvas.style.background = bgVideos[random(0,2)];
+    document.getElementById('myVid').src = 'videos/bg'+random(1,3)+'.mp4';
+
+    //#3 cycle through array and modify text with jQuery
    // window.onload = function() {
 	(function($) {
       $(function() {
-		  
+
           counter =  messages.length - 1,
           previousText = $("#p1"),
           msgLength =  messages.length - 1;
@@ -99,7 +106,7 @@ window.onload = function(){
           display_skills();
         }, 4000);
       });
-		
+
     })(jQuery);
 
 /* TRY WITH INNER HTML */

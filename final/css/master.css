@@ -21,7 +21,7 @@ html,body{
   margin:0 auto;
   font-family:monospace;
   position:relative;
-/*  background-color:rgba(255,0,0,.5);*/
+ /* background-color:rgba(255,0,0,.5); */
 }
 
 .holder img {
@@ -29,6 +29,16 @@ html,body{
 	top:0;
 	left:0;
 	z-index:-1;
+}
+
+#myVid {
+  position: fixed;
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+	z-index: -1;
 }
 
 p,h1{

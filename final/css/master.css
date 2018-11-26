@@ -49,3 +49,26 @@ p,h1{
 p{
   line-height:22px;
 }
+
+/* SVG classes */
+.st0{fill:#FFFFFF;}
+.st1{fill:#A2E4FF;}
+.st2{fill:#8BB5FF;}
+.st3{fill:#A6D9FF;}
+.st4{fill:#A5E9F9;}
+.st5{fill:#87D4F9;}
+
+.hp {transition:all .5s}
+.hp:hover {
+	fill: #FFF;
+	box-shadow: 0 0 3px #FF0000;
+}
+
+#human {
+	position: absolute;
+	top:150px;
+	right:120px;
+	width:50%;
+	transition: all .5s;
+	/* border: 1px solid red; */
+}

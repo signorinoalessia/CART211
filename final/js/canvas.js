@@ -35,27 +35,36 @@ window.onload = function(){
  bgImages[2] = new Image();
  bgImages[2].src = 'images/bg3.jpg';*/
 
-// videos array
-  // var bgVideos = new Array();
+// videos test
+  var bgVideos = new Array();
   // bgVideos[0] = new Video();
   // bgVideos[0].src = 'videos/bg1.mp4';
   // bgVideos[1] = new Video();
   // bgVideos[1].src = 'videos/bg2.mp4';
-  // bgVideos[2] = new Video();
-  // bgVideos[2].src = 'videos/bg3.mp4';
+
+  // bgVideos[0] = document.createElement("VIDEO");
+  // bgVideos[0].setAttribute("src","videos/bg1.mp4");
+  // bgVideos[1] = document.createElement("VIDEO");
+  // bgVideos[1].setAttribute("src","videos/bg2.mp4");
+  // bgVideos[2] = document.createElement("VIDEO");
+  // bgVideos[2].setAttribute("src","videos/bg3.mp4");
 
 // loop 3 videos
   for (let i=0;i<videoLength;i++) {
-    bgVideos[i] = new Video();
-    bgVideos[i].src = 'videos/bg'+[i+1]+'.mp4';
+    //bgVideos[i] = new Video();
+    // bgVideos[i].src = 'videos/bg'+[i+1]+'.mp4';
+
+    bgVideos[i] = document.createElement("VIDEO");
+    // bgVideos[i].setAttribute("src","videos/bg2.mp4");
+    bgVideos[i].setAttribute("src",'videos/bg'+[i+1]+'.mp4');
   }
+
+
+
 
 	// for bouncing body parts, parent needs to be relative (container)
 	// so position recenters
-
-	// floating effects of body parts
-	// floating objects in js, velocity.js
-	// jquery ui drag and drop
+	// floating effects of body parts, jquery ui drag and drop
 
   // random for colors (and eventually images/videos)
   let random = function(min,max){
@@ -68,8 +77,8 @@ window.onload = function(){
   window.addEventListener('resize',function(){
 //	  console.log("good version");
     // #1 change color of background
-    holder.style.backgroundColor = 'rgba('+random(0,255)+','+random(0,255)+','+random(0,255)+','+0.8+')';
-	  console.log(holder.style.backgroundColor);
+    holder.style.backgroundColor = 'rgba('+random(0,255)+','+random(0,255)+','+random(0,255)+','+0.4+')';
+	  //console.log(holder.style.backgroundColor);
 
 
     // #2 change background (images/videos)
@@ -78,8 +87,9 @@ window.onload = function(){
 
     //holder.style.backgroundImage = "url(images/bg1.jpg)"; //to throw away
 
-    canvas.style.background = bgVideos[random(0,2)];
-    document.getElementById('myVid').src = 'videos/bg'+random(1,3)+'.mp4';
+    // canvas.style.background = bgVideos[random(0,2)];
+    document.getElementById('myVidSrc').src = 'videos/bg'+random(1,3)+'.mp4';
+    console.log(myVidSrc);
 
     //#3 cycle through array and modify text with jQuery
    // window.onload = function() {
@@ -109,23 +119,8 @@ window.onload = function(){
 
     })(jQuery);
 
-/* TRY WITH INNER HTML */
-    // for (let i=0;i<messages.length;i++) {
-    //   document.getElementById('p1').innerHTML = messages[i];
-    //   console.log(messages[i]);
-
-      // key = i % msgLength;
-      // console.log("key:"+key);
-      // // document.getElementById('p1').innerHTML = messages[key];
-      // let str = document.getElementById('p1').innerHTML;
-      // console.log("STRING:"+str);
-      // let res = str.replace(key);
-      // console.log("REPLACED"+str);
-      // console.log(res);
-      // document.getElementById('p1').innerHTML = res;
-      // console.log(messages[key]);
-    // }
-
   }); //end eventListener
+
+  // var s = Snap("#svg");
 
 }; // end onLoad

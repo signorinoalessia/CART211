@@ -44,10 +44,12 @@ html,body{
 p,h1{
   max-width:600px;
   margin:20px auto;
+	color:#fff;
 }
 
 p{
   line-height:22px;
+	color:#fff;
 }
 
 /* SVG classes */

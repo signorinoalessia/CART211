@@ -59,13 +59,6 @@ window.onload = function(){
     bgVideos[i].setAttribute("src",'videos/bg'+[i+1]+'.mp4');
   }
 
-
-
-
-	// for bouncing body parts, parent needs to be relative (container)
-	// so position recenters
-	// floating effects of body parts, jquery ui drag and drop
-
   // random for colors (and eventually images/videos)
   let random = function(min,max){
     let rand = min + Math.random()*(max+1-min);
@@ -121,6 +114,31 @@ window.onload = function(){
 
   }); //end eventListener
 
-  // var s = Snap("#svg");
+  //#4) intstantiate itself when mouse over, click to drag in window
+
+  // for bouncing body parts, parent needs to be relative (container)
+  // so position recenters
+  // floating effects of body parts, jquery ui drag and drop
+
+  let human = document.getElementById("human");
+  human.addEventListener("click",function(){
+    console.log("human clicked");
+  });
+
+  human.addEventListener('mousedown', startDrag);
+  human.addEventListener('mousemove', drag);
+  human.addEventListener('mouseup', endDrag);
+  human.addEventListener('mouseleave', endDrag);
+  human.addEventListener('touchstart', startDrag);
+  human.addEventListener('touchmove', drag);
+  human.addEventListener('touchend', endDrag);
+  human.addEventListener('touchleave', endDrag);
+  human.addEventListener('touchcancel', endDrag);
+
+//https://www.smashingmagazine.com/2018/05/svg-interaction-pointer-events-property/
+// http://www.petercollingridge.co.uk/tutorials/svg/interactive/dragging/
+
+
+
 
 }; // end onLoad

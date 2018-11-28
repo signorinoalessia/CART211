@@ -71,6 +71,7 @@ window.onload = function(){
 //	  console.log("good version");
     // #1 change color of background
     holder.style.backgroundColor = 'rgba('+random(0,255)+','+random(0,255)+','+random(0,255)+','+0.4+')';
+    holder.style.height = "100vh";
 	  //console.log(holder.style.backgroundColor);
 
 
@@ -125,15 +126,33 @@ window.onload = function(){
     console.log("human clicked");
   });
 
-  human.addEventListener('mousedown', startDrag);
-  human.addEventListener('mousemove', drag);
-  human.addEventListener('mouseup', endDrag);
-  human.addEventListener('mouseleave', endDrag);
-  human.addEventListener('touchstart', startDrag);
-  human.addEventListener('touchmove', drag);
-  human.addEventListener('touchend', endDrag);
-  human.addEventListener('touchleave', endDrag);
-  human.addEventListener('touchcancel', endDrag);
+// var snap = Snap("#human");
+// circle1.drag(move1, start, stop );
+//
+// let clickedBodyPart = [];
+// clickedBodyPart = [ {st0,st1,st2,st3,st4,st5}];
+//
+// getElementById
+//
+// function clickEvent(clickedBodyPart[i]){
+//   for (let i=0; i<clickedBodyPart.length; i++) {
+//     console.log()
+//   }
+// }
+//} //end
+
+$(".hp").click(function(){
+  console.log(this.className.baseVal);
+  if (this.className.baseVal == "st5 hp") {
+    console.log("test");
+    $("body").after('<img src = "images/hand.svg" class="genHand"> ');
+    $(".genHand").css({"position":"absolute", "top":"20px", "left":"20px"});
+  }
+});
+
+//style css position at random w/ jquery
+
+
 
 //https://www.smashingmagazine.com/2018/05/svg-interaction-pointer-events-property/
 // http://www.petercollingridge.co.uk/tutorials/svg/interactive/dragging/

@@ -10,7 +10,6 @@ window.onload = function(){
   var Video = document.getElementById('myVid');
   var bgVideos;
   var videoLength = 3;
-  var bgVideos = new Array();
 
   //array of messages to be displayed in #3
   let messages = [
@@ -27,6 +26,39 @@ window.onload = function(){
     "A/S/L? A/S/L? A/S/L?"
   ];
 
+  // array of images for changing bg in #2
+ /*var bgImages = new Array();
+ bgImages[0] = new Image();
+ bgImages[0].src = 'images/bg1.jpg';
+ bgImages[1] = new Image();
+ bgImages[1].src = 'images/bg2.jpg';
+ bgImages[2] = new Image();
+ bgImages[2].src = 'images/bg3.jpg';*/
+
+// videos test
+  var bgVideos = new Array();
+  // bgVideos[0] = new Video();
+  // bgVideos[0].src = 'videos/bg1.mp4';
+  // bgVideos[1] = new Video();
+  // bgVideos[1].src = 'videos/bg2.mp4';
+
+  // bgVideos[0] = document.createElement("VIDEO");
+  // bgVideos[0].setAttribute("src","videos/bg1.mp4");
+  // bgVideos[1] = document.createElement("VIDEO");
+  // bgVideos[1].setAttribute("src","videos/bg2.mp4");
+  // bgVideos[2] = document.createElement("VIDEO");
+  // bgVideos[2].setAttribute("src","videos/bg3.mp4");
+
+// loop 3 videos
+  for (let i=0;i<videoLength;i++) {
+    //bgVideos[i] = new Video();
+    // bgVideos[i].src = 'videos/bg'+[i+1]+'.mp4';
+
+    bgVideos[i] = document.createElement("VIDEO");
+    // bgVideos[i].setAttribute("src","videos/bg2.mp4");
+    bgVideos[i].setAttribute("src",'videos/bg'+[i+1]+'.mp4');
+  }
+
   // random for colors (and eventually images/videos)
   let random = function(min,max){
     let rand = min + Math.random()*(max+1-min);
@@ -36,35 +68,33 @@ window.onload = function(){
 
 // RESIZE EVENT LISTENER
   window.addEventListener('resize',function(){
-
-    // #1) change color of background
+//	  console.log("good version");
+    // #1 change color of background
     holder.style.backgroundColor = 'rgba('+random(0,255)+','+random(0,255)+','+random(0,255)+','+0.4+')';
     holder.style.height = "100vh";
 	  //console.log(holder.style.backgroundColor);
 
 
-    // #2) change background (loop 3 videos)
-    // for (let i=0;i<videoLength;i++) {
-    //   //bgVideos[i] = new Video();
-    //   // bgVideos[i].src = 'videos/bg'+[i+1]+'.mp4';
-    //   bgVideos[i] = document.createElement("VIDEO");
-    //   bgVideos[i].setAttribute("src",'videos/bg'+[i+1]+'.mp4');
-    //   // bgVideos[i].setAttribute("src","videos/bg2.mp4");
-    // }
+    // #2 change background (images/videos)
+    /* canvas.style.background = bgImages[random(0,2)];
+    document.getElementById('bng').src = 'images/bg'+random(1,3)+'.jpg'; */
+
+    //holder.style.backgroundImage = "url(images/bg1.jpg)"; //to throw away
 
     // canvas.style.background = bgVideos[random(0,2)];
-    // document.getElementById('myVidSrc').src = 'videos/bg'+random(1,3)+'.mp4';
-    // console.log(myVidSrc);
+    document.getElementById('myVidSrc').src = 'videos/bg'+random(1,3)+'.mp4';
+    console.log(myVidSrc);
 
-    //#3 cycle through array and modify text with jQuery (NOT MY CODE: stackoverflow example)
-	  (function($) {
+    //#3 cycle through array and modify text with jQuery
+   // window.onload = function() {
+	(function($) {
       $(function() {
 
           counter =  messages.length - 1,
           previousText = $("#p1"),
           msgLength =  messages.length - 1;
 
-        function display_messages() {
+        function display_skills() {
           if (counter === msgLength) {
               counter = 0;
           }
@@ -74,10 +104,10 @@ window.onload = function(){
           previousText.html(messages[counter]);
         }
 
-        display_messages();
+        display_skills();
 
         setInterval(function() {
-          display_messages();
+          display_skills();
         }, 4000);
       });
 
@@ -85,7 +115,7 @@ window.onload = function(){
 
   }); //end eventListener
 
-  //#4) instantiate itself when mouse over, click to drag in window
+  //#4) intstantiate itself when mouse over, click to drag in window
 
   // for bouncing body parts, parent needs to be relative (container)
   // so position recenters
@@ -95,36 +125,6 @@ window.onload = function(){
   human.addEventListener("click",function(){
     console.log("human clicked");
   });
-
-
-
-//#4) style css position at random w/ jquery
-// Ref: https://stackoverflow.com/questions/36926734/random-position-multiple-images)
-
-$(".hp").click(function(){
-  console.log(this.className.baseVal);
-  if (this.className.baseVal == "st5 hp") {
-    $("body").after('<img src = "images/hand.svg" class="genHand"> ');
-  //  $('<img src = "images/hand.svg" class="genHand">').clone().appendTo("body");
-//  $("this.className.baseVal" class="genHand").clone().appendTo("body");
-//  $("body").append($('<img src = "images/hand.svg" class="genHand">').clone(true));
-// $(this.className.baseVal).clone().insertAfter(this.className.baseVal);
-
-
-    // $(".genHand").css({"position":"absolute", "top":"20px", "left":"20px"});
-    let randPosX = Math.floor((Math.random() * canvas.width));
-    let randPosY = Math.floor((Math.random() * canvas.height));
-    $(".genHand").css({"position":"absolute"});
-    $(".genHand").css('left', randPosX);
-    $(".genHand").css('top', randPosY);
-    // console.log(genHand.css.left);
-    // console.log(.genHand.css.top);
-  }
-});
-
-
-//http://svg.dabbles.info/snaptut-dragscale <----
-//https://forum.jquery.com/topic/clone-svg-elements
 
 // var snap = Snap("#human");
 // circle1.drag(move1, start, stop );
@@ -139,14 +139,25 @@ $(".hp").click(function(){
 //     console.log()
 //   }
 // }
-
 //} //end
+
+$(".hp").click(function(){
+  console.log(this.className.baseVal);
+  if (this.className.baseVal == "st5 hp") {
+    console.log("test");
+    $("body").after('<img src = "images/hand.svg" class="genHand"> ');
+    $(".genHand").css({"position":"absolute", "top":"20px", "left":"20px"});
+  }
+});
+
+//style css position at random w/ jquery
+
 
 
 //https://www.smashingmagazine.com/2018/05/svg-interaction-pointer-events-property/
 // http://www.petercollingridge.co.uk/tutorials/svg/interactive/dragging/
 
-//to make elements move away from mouse (repelled), every single body part needs to be manually positioned
+
 
 
 }; // end onLoad

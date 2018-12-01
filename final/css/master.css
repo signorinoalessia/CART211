@@ -68,11 +68,14 @@ p{
 }
 
 #human {
-	position: absolute;
-	top:150px;
-	right:120px;
-	width:35%;
+	/* position: absolute; */
+	position:fixed;
+	top:22%;
+	left:50%;
+	transform:translate(-50%,0%);
+	width:30%;
 	transition: all .5s;
+	opacity:0.8;
 	/* border: 1px solid red; */
 }
 

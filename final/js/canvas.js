@@ -1,5 +1,18 @@
 // Ref for jQuery: https://stackoverflow.com/questions/32568635/how-do-i-change-div-text-using-array-values-with-javascript
 // pixelate ref: https://codepen.io/lawrencealan/pen/nJgqA
+// http://jsfiddle.net/dvcx3mgt/7/
+
+// let snap = Snap("#test");
+// let path = "images/hand.svg";
+// let times = 10;
+//
+// Snap.load(path, (img) => {
+//   let el = img/select("g");
+//   snap.append(el);
+//   moveIt(el);
+//   for(let i=0;i<10;)
+// })
+
 
 window.onload = function(){
   console.clear();
@@ -101,26 +114,42 @@ window.onload = function(){
 //#4) style css position at random w/ jquery
 // Ref: https://stackoverflow.com/questions/36926734/random-position-multiple-images)
 
+
+  let i = 0;
+
 $(".hp").click(function(){
   console.log(this.className.baseVal);
   if (this.className.baseVal == "st5 hp") {
-    $("body").after('<img src = "images/hand.svg" class="genHand"> ');
-  //  $('<img src = "images/hand.svg" class="genHand">').clone().appendTo("body");
-//  $("this.className.baseVal" class="genHand").clone().appendTo("body");
-//  $("body").append($('<img src = "images/hand.svg" class="genHand">').clone(true));
-// $(this.className.baseVal).clone().insertAfter(this.className.baseVal);
+    //for (let i=0;i<10;i++){
+      i++;
+      let count = "genHand"+i;
+      console.log(count);
+
+    //$("body").after('<img src = "images/hand.svg" >');
+      $("body").after("<img src='images/hand.svg' class='" + count+ "' >");
+    //$("img").addClass(count);
+// }
+    //$("body").after('<img src = "images/hand.svg" class="genHand"+i+">" ');
+
+    //$("body").append('<img src = "images/hand.svg" class="genHand"> ');
+    // console.log(this.randPosX);
 
 
-    // $(".genHand").css({"position":"absolute", "top":"20px", "left":"20px"});
     let randPosX = Math.floor((Math.random() * canvas.width));
-    let randPosY = Math.floor((Math.random() * canvas.height));
-    $(".genHand").css({"position":"absolute"});
-    $(".genHand").css('left', randPosX);
-    $(".genHand").css('top', randPosY);
+    //let randPosX = Math.floor((Math.random() *holder.width));
+    console.log(holder.width);
+    console.log(holder.height);
+    //let randPosY = Math.floor((Math.random() * holder.height));
+     let randPosY = Math.floor((Math.random() * canvas.height));
+    $("."+count).css({"position":"absolute"});
+    $("."+count).css('left', randPosX);
+    $("."+count).css('top', randPosY);
+    console.log("count:"+count);
     // console.log(genHand.css.left);
     // console.log(.genHand.css.top);
   }
-});
+//  }
+}); //end of click function
 
 
 //http://svg.dabbles.info/snaptut-dragscale <----

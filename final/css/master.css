@@ -33,6 +33,11 @@ html,body{
 	top:0;
 	left:0;
 	z-index:-1;
+	width:30%
+}
+
+img{
+	width:5%;
 }
 
 #myVid {

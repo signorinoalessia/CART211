@@ -125,20 +125,12 @@ $(".hp").click(function(){
       let count = "genHand"+i;
       console.log(count);
 
-    //$("body").after('<img src = "images/hand.svg" >');
       $("body").after("<img src='images/hand.svg' class='" + count+ "' >");
-    //$("img").addClass(count);
-// }
-    //$("body").after('<img src = "images/hand.svg" class="genHand"+i+">" ');
-
-    //$("body").append('<img src = "images/hand.svg" class="genHand"> ');
-    // console.log(this.randPosX);
-
 
     let randPosX = Math.floor((Math.random() * canvas.width));
     //let randPosX = Math.floor((Math.random() *holder.width));
-    console.log(holder.width);
-    console.log(holder.height);
+    console.log(canvas.width);
+    console.log(canvas.height);
     //let randPosY = Math.floor((Math.random() * holder.height));
      let randPosY = Math.floor((Math.random() * canvas.height));
     $("."+count).css({"position":"absolute"});

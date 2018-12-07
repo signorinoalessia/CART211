@@ -1,16 +1,25 @@
-// Ref for jQuery: https://stackoverflow.com/questions/32568635/how-do-i-change-div-text-using-array-values-with-javascript
-// pixelate ref: https://codepen.io/lawrencealan/pen/nJgqA
-// http://jsfiddle.net/dvcx3mgt/7/
+/* REFERENCES:
+for jQuery: https://stackoverflow.com/questions/32568635/how-do-i-change-div-text-using-array-values-with-javascript
+pixelate ref: https://codepen.io/lawrencealan/pen/nJgqA
+http://svg.dabbles.info/snaptut-dragscale
+https://www.smashingmagazine.com/2018/05/svg-interaction-pointer-events-property/
+https://forum.jquery.com/topic/clone-svg-elements
+https://stackoverflow.com/questions/36926734/random-position-multiple-images */
 
-// let snap = Snap("#test");
+
+//Using the Snap.svg JavaScript library makes working with SVG assets as easy as jQuery makes working with the DOM.
+// let snap = Snap("#humanBody");
 // let path = "images/hand.svg";
 // let times = 10;
-//
+// let dragging = 0;
+
 // Snap.load(path, (img) => {
-//   let el = img/select("g");
+//   let el = img.select("g");
 //   snap.append(el);
 //   moveIt(el);
-//   for(let i=0;i<10;)
+//   for(let i=0;i<10;) {
+//     snap.append( moveIt( el.clone() ) )
+//   }
 // })
 
 
@@ -55,21 +64,7 @@ window.onload = function(){
     holder.style.height = "100vh";
 	  //console.log(holder.style.backgroundColor);
 
-
-    // #2) change background (loop 3 videos)
-    // for (let i=0;i<videoLength;i++) {
-    //   //bgVideos[i] = new Video();
-    //   // bgVideos[i].src = 'videos/bg'+[i+1]+'.mp4';
-    //   bgVideos[i] = document.createElement("VIDEO");
-    //   bgVideos[i].setAttribute("src",'videos/bg'+[i+1]+'.mp4');
-    //   // bgVideos[i].setAttribute("src","videos/bg2.mp4");
-    // }
-
-    // canvas.style.background = bgVideos[random(0,2)];
-    // document.getElementById('myVidSrc').src = 'videos/bg'+random(1,3)+'.mp4';
-    // console.log(myVidSrc);
-
-    //#3 cycle through array and modify text with jQuery (NOT MY CODE: stackoverflow example)
+    //#2 cycle through array and modify text with jQuery
 	  (function($) {
       $(function() {
 
@@ -98,54 +93,74 @@ window.onload = function(){
 
   }); //end eventListener
 
-  //#4) instantiate itself when mouse over, click to drag in window
+  //#3) instantiate body part when mouse over, click to drag in window
+  // for bouncing body parts, parent needs to be relative (container) so pos recenters
 
-  // for bouncing body parts, parent needs to be relative (container)
-  // so position recenters
-  // floating effects of body parts, jquery ui drag and drop
-
+let countArray = { "hand": 0, "thigh": 0, "neck": 0 };
+//console.log(countArray["hand"]);
+//countArray.push(obj);
   let human = document.getElementById("human");
   human.addEventListener("click",function(){
     console.log("human clicked");
   });
 
+  //let i = 0;
+  //let count =1;
 
-
-//#4) style css position at random w/ jquery
-// Ref: https://stackoverflow.com/questions/36926734/random-position-multiple-images)
-
-
-  let i = 0;
 
 $(".hp").click(function(){
   console.log(this.className.baseVal);
-  if (this.className.baseVal == "st5 hp") {
-    //for (let i=0;i<10;i++){
-      i++;
-      let count = "genHand"+i;
-      console.log(count);
+  //let split =this.className.baseVal.split(" ")
+  //console.log(split[0]);
+  console.log(this.id);
+  let imagePath = 'images/'+this.id+'.svg';
 
-      $("body").after("<img src='images/hand.svg' class='" + count+ "' >");
+  let c = countArray[this.id];
+  c++;
+  countArray[this.id]=c;
+  //count++;
 
-    let randPosX = Math.floor((Math.random() * canvas.width));
-    //let randPosX = Math.floor((Math.random() *holder.width));
-    console.log(canvas.width);
-    console.log(canvas.height);
-    //let randPosY = Math.floor((Math.random() * holder.height));
-     let randPosY = Math.floor((Math.random() * canvas.height));
-    $("."+count).css({"position":"absolute"});
-    $("."+count).css('left', randPosX);
-    $("."+count).css('top', randPosY);
-    console.log("count:"+count);
-    // console.log(genHand.css.left);
-    // console.log(.genHand.css.top);
-  }
-//  }
+  $("body").after("<img src='"+imagePath+"' class='" + this.id+countArray[this.id]+ "' >");
+
+  let randPosX = Math.floor((Math.random() * canvas.offsetWidth));
+  //let randPosX = Math.floor((Math.random() *holder.width));
+  console.log(canvas.offsetWidth);
+  console.log(canvas.offsetHeight);
+  //let randPosY = Math.floor((Math.random() * holder.height));
+  let randPosY = Math.floor((Math.random() * canvas.offsetHeight));
+  $("."+this.id+countArray[this.id]).css({"position":"absolute"});
+  $("."+this.id+countArray[this.id]).css('left', randPosX);
+  $("."+this.id+countArray[this.id]).css('top', randPosY);
 }); //end of click function
 
+// if (this.className.baseVal == "st3 hp") {
+//   //if (this.className.baseVal == "hp") {
+//   //if ((this.className.baseVal == "st5 hp") || (this.className.baseVal == "st3 hp")) {
+//     //for (let i=0;i<10;i++){
+//       i++;
+//       let count = "genHand"+i;
+//       console.log(count);
+//
+//       $("body").after("<img src='"+imagePath+"' class='" + count+ "' >");
+//
+    // let randPosX = Math.floor((Math.random() * canvas.offsetWidth));
+    // //let randPosX = Math.floor((Math.random() *holder.width));
+    // console.log(canvas.offsetWidth);
+    // console.log(canvas.offsetHeight);
+    // //let randPosY = Math.floor((Math.random() * holder.height));
+    // let randPosY = Math.floor((Math.random() * canvas.offsetHeight));
+    // $("."+count).css({"position":"absolute"});
+    // $("."+count).css('left', randPosX);
+    // $("."+count).css('top', randPosY);
+//     console.log("count:"+count);
+//     // console.log(genHand.css.left);
+//     // console.log(.genHand.css.top);
+//   }
+//  }
+// }); //end of click function
 
-//http://svg.dabbles.info/snaptut-dragscale <----
-//https://forum.jquery.com/topic/clone-svg-elements
+
+//to make elements move away from mouse (repelled), every single body part needs to be manually positioned
 
 // var snap = Snap("#human");
 // circle1.drag(move1, start, stop );
@@ -162,12 +177,6 @@ $(".hp").click(function(){
 // }
 
 //} //end
-
-
-//https://www.smashingmagazine.com/2018/05/svg-interaction-pointer-events-property/
-// http://www.petercollingridge.co.uk/tutorials/svg/interactive/dragging/
-
-//to make elements move away from mouse (repelled), every single body part needs to be manually positioned
 
 
 }; // end onLoad

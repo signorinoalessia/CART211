@@ -17,7 +17,7 @@ body {
     background-color: #f1ebe1; /* For browsers that do not support gradients */
     background-image: linear-gradient(to bottom right, #f1ebe1, #F1D6C5);
     background-repeat: no-repeat;
-    background-attachment: fixed; 
+    background-attachment: fixed;
 	/* Standard syntax (must be last) */
 }
 #s1 {
@@ -41,7 +41,7 @@ a {
 	margin-top: 40%;
 	position: relative;
 }
-/* 
+/*
 img {
     max-width: 30%;
     height: auto;
@@ -77,19 +77,24 @@ header h2{
 p {
 	font-family: Merriweather, Georgia, "serif";
 	font-style: Light, Regular;
-	font-size: 12px;
+	font-size: 14px;
 }
 p.about {
-    max-width: 44em; 
+    max-width: 30em;
     border: 3px solid #e9e0d0;
     padding: 14px 25px;
     word-wrap: break-word;
 }
 p.reading {
-    max-width: 76em; 
+    max-width: 72em;
     border: 3px solid #e9e0d0;
     padding: 14px 25px;
     word-wrap: break-word;
+		text-align: justify;
+		line-height:34px;
+		padding-bottom:40px;
+		padding-left:15%;
+		padding-right:15%;
 }
 p2 {
 	font-family: Avenir;

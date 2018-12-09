@@ -7,22 +7,6 @@ https://forum.jquery.com/topic/clone-svg-elements
 https://stackoverflow.com/questions/36926734/random-position-multiple-images */
 
 
-//Using the Snap.svg JavaScript library makes working with SVG assets as easy as jQuery makes working with the DOM.
-// let snap = Snap("#humanBody");
-// let path = "images/hand.svg";
-// let times = 10;
-// let dragging = 0;
-
-// Snap.load(path, (img) => {
-//   let el = img.select("g");
-//   snap.append(el);
-//   moveIt(el);
-//   for(let i=0;i<10;) {
-//     snap.append( moveIt( el.clone() ) )
-//   }
-// })
-
-
 window.onload = function(){
   console.clear();
   var holder = document.getElementById('js-holder');
@@ -95,18 +79,17 @@ window.onload = function(){
 
   //#3) instantiate body part when mouse over, click to drag in window
   // for bouncing body parts, parent needs to be relative (container) so pos recenters
-
-let countArray = { "hand": 0, "thigh": 0, "neck": 0 };
-//console.log(countArray["hand"]);
-//countArray.push(obj);
+  // associative array with key value pairs. ID is linked to SVG file name AND in the class of the SVG (index)
+  let countArray = { "hand":0, "thigh":0, "neck":0, "arm":0, "torso":0, "neck":0, "calf":0, "foot":0, "head":0 };
   let human = document.getElementById("human");
+  //console.log(countArray["hand"]);
+  //countArray.push(obj);
   human.addEventListener("click",function(){
     console.log("human clicked");
   });
 
   //let i = 0;
   //let count =1;
-
 
 $(".hp").click(function(){
   console.log(this.className.baseVal);
@@ -132,6 +115,9 @@ $(".hp").click(function(){
   $("."+this.id+countArray[this.id]).css('left', randPosX);
   $("."+this.id+countArray[this.id]).css('top', randPosY);
 }); //end of click function
+
+}; // end onLoad
+
 
 // if (this.className.baseVal == "st3 hp") {
 //   //if (this.className.baseVal == "hp") {
@@ -177,6 +163,3 @@ $(".hp").click(function(){
 // }
 
 //} //end
-
-
-}; // end onLoad

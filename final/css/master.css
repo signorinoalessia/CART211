@@ -139,7 +139,7 @@ h1 {
   margin:0 auto;
   font-family:monospace;
   position:relative;
-	z-index:-4;
+	z-index:-2;
  /* background-color:rgba(255,0,0,.5); */
 }
 
@@ -147,7 +147,7 @@ h1 {
 	position:absolute;
 	top:0;
 	left:0;
-	z-index:10;
+	z-index:40;
 	width:30%
 }
 
@@ -166,7 +166,7 @@ img{
 	transform: translate(-50%, -50%);
   min-width: 100%;
   min-height: 100%;
-	z-index: -4;
+	z-index: -5;
 }
 
 p,h1{
@@ -187,25 +187,6 @@ p{
 	background:rgba(255,255,255,0.7);
 	position:relative; */
 }
-
-
-
-/* #redBox {
-  background: red;
-  color: #fff;
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  font-size: 0.4em;
-  font-weight: bold;
-  text-align: center;
-  width: 10px;
-  height: 10px;
-  border-radius: 2px;
-	z-index:150;
-	position: absolute;
-	top: 189px;
-	left:120px;
-} */
-
 
 
 /* SVG classes */

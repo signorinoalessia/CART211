@@ -89,7 +89,7 @@ window.onload = function(){
   //console.log(countArray["hand"]);
   //countArray.push(obj);
   human.addEventListener("click",function(){
-    console.log("human clicked");
+    //console.log("human clicked");
   });
 
   //let i = 0;
@@ -108,7 +108,7 @@ $(".hp").click(function(){
   //count++;
 
   //$("body").after("<img src='"+imagePath+"' class='" + this.id+countArray[this.id]+ "' >");
-  $("body").after("<img src='"+imagePath+"' class='" + this.id+countArray[this.id]+ "' pic >");
+  $("body").after("<img src='"+imagePath+"' class='test " + this.id+countArray[this.id]+ "' >");
   //let windowWidth = canvas.offsetWidth- this.width;
   //  let randPosX = Math.floor((Math.random() * canvas.offsetWidth)-this.width);
 
@@ -121,11 +121,31 @@ $(".hp").click(function(){
   $("."+this.id+countArray[this.id]).css({"position":"absolute"});
   $("."+this.id+countArray[this.id]).css('left', randPosX);
   $("."+this.id+countArray[this.id]).css('top', randPosY);
+ //let temp = document.getElementsByClassName("");
+ console.log($(".test"));
+
+var list = document.getElementsByClassName("test");
+// for(let i =0; i<list.length;i++){
+//   console.log(i);
+//   let t = list[i];
+//   t.addEventListener("click",function(){
+//
+//      console.log("test");
+//       //$(this).css('left',300);
+//     });
+// }
+for (let i = 0; i < list.length; i++) {
+	     list[i].addEventListener('click', function (event) {
+		       console.log('clicked');
+          $(list[i]).css('left', randPosX+10)}, false);
+         }
+
+
 
   console.log("BODY PART: "+this.id+countArray[this.id]);
 }); //end of click function
 
-$(".holder").click(function(){
+$(".popupContainer").click(function(){
   console.log("holder clicked");
   // $("p").append(p1);
   // $("p").append("< 'id='p1>");
@@ -138,11 +158,14 @@ $(loopingText).append(loopingText);
 // let c = countArray[this.id];
 // c++;
 // countArray[this.id]=c;
-
 //console.log(this);
+
 // $(".hp").hover(function(){
-$("body").hover(function() {
+//$("body").hover(function() {
 //$("."+this.id+countArray[this.id]).hover(function(){
+// $("this").hover(function() {
+
+$("img").on("mouseover",function(){
   console.log("hover");
   $("this").css('left',300);
   console.log("THIS"+this);

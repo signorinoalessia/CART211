@@ -15,15 +15,39 @@ https://codepen.io/k3no/pen/peRrYq -->
 
 <body>
   <script src = "jquery/jquery-3.3.1.min.js"></script>
-  <script src="snap.svg-min.js"></script>
+  <!-- <script src="snap.svg-min.js"></script> -->
   <script src="js/canvas.js"></script>
+
+  <script>
+  function hideFunction(){
+    document.getElementById("display_me").style.opacity = 0;
+  }
+  </script>
+
+  <!-- INTRO DIALOG WINDOW -->
+<article id="display_me">
+  <h1>a/s/l</h1>
+  <p>Avatars become the vessel for depicting age, race, and gender in cyber communities, as well as ways of showing other cyber-citizens one’s preferences, taste and political stances, in the similar vein of how one would show so through their garments and accessories. Most importantly, these visual personas, are not only an extension of the physical culture, but they contribute to the creation of meaning in society. As Nakamura points out, “these avatars work as supplementary imaging practices: they are part of a visual culture in which identity is added to, rather than replaced by, images of race, gender, and nation” (Nakamura, 49) The ability to fabricate a new identity does not have to be constrained to be a facsimile of the physical person standing being their interface. Roleplaying in forums, for example, allows the user to explore different facets of their own persona, or perhaps to reinvent oneself completely. The approach that one takes to portray themselves can reject their own society,  mirror it, or distort it as they wish within the constraints of the community in which it operates. As Tyminski proposes, the Internet becomes a fantasized container in which one tests their own ego in relation to others. “Lacking this protective boundary, other ego capacities can suffer, such as reality testing, flexible thinking about choices, and affective modulation. Reinforcement of magical thinking might further inflate an omnipotent attitude about the self. This omnipotence undercuts one’s ability to relate in cooperation, mutuality, and acceptance of limitations.“ (Tyminski, 236). The definition of the self is rooted in core values, but temperamental features is flexible and adapts to social circumstances. In a sense, the self is reflected back from society, and this dynamic assists the formation of the self. One must therefore take in consideration the undergoing discourse of said society in order to determine what it will respond back.
+  </p>
+  <b><p>Try resizing your window and clicking on the window and the body.</p></b>
+  <span id="close" onclick = "hideFunction()">X</span>
+  <!-- ^^ onclick is the eventHandler  -->
+</article>
+
+<!-- <header> -->
+  <!-- <h1>a/s/l navigator</h1>
+  <p>Navigate this environment by resizing your browser window and clicking on the body.</p>''
+</header> -->
 
 <canvas id="canvas"></canvas>
 
   <div class="holder" id="js-holder">
-    <h1>a/s/l navigator</h1>
-    <p>Navigate this environment by resizing your browser window and clicking on the body.</p>
-    <p id="p1"> Welcome. It's nice to meet you. </p>
+    <div id="redBox">
+      <span id="x">X</span>
+    </div>
+
+    <p id="p1"> Welcome. It's nice to meet you.
+     </p>
 
     <!-- <img id="bng" src="images/bg1.jpg" alt="background shifting"> -->
 

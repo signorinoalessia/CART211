@@ -8,6 +8,69 @@ html,body{
 	height:100%;
 }
 
+#display_me {
+	/* width: 1120px; */
+	/* border-top: solid blue 45px; */
+  width:70%;
+  min-height:560px;
+  height:auto;
+  background-color: rgba(255,255,255,1);
+	/* background: rgba(255,255,255,0.8); */
+	/* padding: 20px; */
+	/* font-size: 2vmin; */
+	/* font-family: 'Quicksand', sans-serif; */
+	color: #333;
+	position:absolute;
+	top:40px;
+	/* left:40px; */
+  left: 15%;
+	opacity: 1;
+  z-index: 90;
+	transition: all .5s;
+}
+
+#display_me p{
+  padding-top:60px;
+  line-height: 1.6;
+	color:#333;
+  font-family:monospace;
+	text-align: justify;
+}
+
+#display_me h1{
+	position: absolute;
+	top: -20px;
+	min-width:100%;
+	width:auto;
+  padding-top:0px;
+  line-height: 2.2;
+	color:white;
+	font-family:monospace;
+	background-color: blue;
+}
+
+h1 {
+	padding-left:50px;
+}
+
+#close {
+	background: red;
+	padding: 10px;
+	font-size: 18px;
+	font-family: 'Quicksand', sans-serif;
+	color: #fff;
+	position:absolute;
+	top:0px;
+	right: 0px;
+	cursor: pointer;
+/*	border:2px solid #333;*/
+}
+#close:hover {
+	background: #fff;
+	color: #333;
+}
+
+
 #canvas{
   position:absolute;
 	top:0;
@@ -64,6 +127,34 @@ p{
   line-height:22px;
 	color:#fff;
 }
+
+#p1 {
+	border: 1px solid black;
+	border-top: 14px solid blue;
+	width:70%;
+	background:rgba(255,255,255,0.7);
+	position:relative;
+}
+
+
+
+#redBox {
+  background: red;
+  color: #fff;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-size: 0.4em;
+  font-weight: bold;
+  text-align: center;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+	z-index:150;
+	position: absolute;
+	top: 189px;
+	left:120px;
+}
+
+
 
 /* SVG classes */
 .st0{fill:#FFFFFF;}

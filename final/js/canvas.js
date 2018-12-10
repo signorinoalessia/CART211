@@ -40,6 +40,10 @@ window.onload = function(){
     return rand;
   };
 
+  // function hideFunction(){
+  //   document.getElementById("display_me").style.opacity = 0;
+  // }
+
 // RESIZE EVENT LISTENER
   window.addEventListener('resize',function(){
 
@@ -125,7 +129,10 @@ $(".holder").click(function(){
   console.log("holder clicked");
   // $("p").append(p1);
   // $("p").append("< 'id='p1>");
-$("body").append(document.getElementById( "p1" )
+  //document.getElementById('p1') = para;
+  loopingText = $("#p1");
+//$("body").append(loopingText);
+$(loopingText).append(loopingText);
 });
 
 // let c = countArray[this.id];

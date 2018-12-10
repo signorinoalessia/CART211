@@ -40,6 +40,10 @@ img{
 	width:5%;
 }
 
+#arm img {
+	width:30%
+}
+
 #myVid {
   position: fixed;
 	top:50%;

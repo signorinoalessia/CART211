@@ -103,18 +103,41 @@ $(".hp").click(function(){
   countArray[this.id]=c;
   //count++;
 
-  $("body").after("<img src='"+imagePath+"' class='" + this.id+countArray[this.id]+ "' >");
+  //$("body").after("<img src='"+imagePath+"' class='" + this.id+countArray[this.id]+ "' >");
+  $("body").after("<img src='"+imagePath+"' class='" + this.id+countArray[this.id]+ "' pic >");
+  //let windowWidth = canvas.offsetWidth- this.width;
+  //  let randPosX = Math.floor((Math.random() * canvas.offsetWidth)-this.width);
 
   let randPosX = Math.floor((Math.random() * canvas.offsetWidth));
-  //let randPosX = Math.floor((Math.random() *holder.width));
+  let randPosY = Math.floor((Math.random() * canvas.offsetHeight));
+
   console.log(canvas.offsetWidth);
   console.log(canvas.offsetHeight);
-  //let randPosY = Math.floor((Math.random() * holder.height));
-  let randPosY = Math.floor((Math.random() * canvas.offsetHeight));
+
   $("."+this.id+countArray[this.id]).css({"position":"absolute"});
   $("."+this.id+countArray[this.id]).css('left', randPosX);
   $("."+this.id+countArray[this.id]).css('top', randPosY);
+
+  console.log("BODY PART: "+this.id+countArray[this.id]);
 }); //end of click function
+
+// let c = countArray[this.id];
+// c++;
+// countArray[this.id]=c;
+
+//console.log(this);
+// $(".hp").hover(function(){
+$("."+this.id+countArray[this.id]).hover(function(){
+  console.log("hover");
+  // let c = countArray[this.id];
+  // c++;
+  // countArray[this.id]=c;
+
+  // $("."+this.id+countArray[this.id]).css({"position":"absolute"});
+  // $("."+this.id+countArray[this.id]).css('left', randPosX);
+  // $("."+this.id+countArray[this.id]).css('top', randPosY);
+
+}); //end of hover function
 
 }; // end onLoad
 

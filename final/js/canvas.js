@@ -121,14 +121,24 @@ $(".hp").click(function(){
   console.log("BODY PART: "+this.id+countArray[this.id]);
 }); //end of click function
 
+$(".holder").click(function(){
+  console.log("holder clicked");
+  // $("p").append(p1);
+  // $("p").append("< 'id='p1>");
+$("body").append(document.getElementById( "p1" )
+});
+
 // let c = countArray[this.id];
 // c++;
 // countArray[this.id]=c;
 
 //console.log(this);
 // $(".hp").hover(function(){
-$("."+this.id+countArray[this.id]).hover(function(){
+$("body").hover(function() {
+//$("."+this.id+countArray[this.id]).hover(function(){
   console.log("hover");
+  $("this").css('left',300);
+  console.log("THIS"+this);
   // let c = countArray[this.id];
   // c++;
   // countArray[this.id]=c;

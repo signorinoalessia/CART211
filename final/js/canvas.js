@@ -6,6 +6,14 @@ https://www.smashingmagazine.com/2018/05/svg-interaction-pointer-events-property
 https://forum.jquery.com/topic/clone-svg-elements
 https://stackoverflow.com/questions/36926734/random-position-multiple-images */
 
+// AUDIO - bypassing autoplay prevention on chrome
+var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+   if(!isChrome){
+     $('#iframeAudio').remove()
+   }
+ else{
+    $('#playAudio').remove() //just to make sure that it will not have 2x audio in the background
+ }
 
 window.onload = function(){
   console.clear();
@@ -135,9 +143,11 @@ var list = document.getElementsByClassName("test");
 //     });
 // }
 for (let i = 0; i < list.length; i++) {
-	     list[i].addEventListener('click', function (event) {
-		       console.log('clicked');
-          $(list[i]).css('left', randPosX+10)}, false);
+	     list[i].addEventListener('mouseover', function (event) {
+		       console.log('hovered body part');
+          $(list[i]).css('left', randPosX+10)
+          $(list[i]).css('top', randPosY+10)
+        }, false);
          }
 
 
